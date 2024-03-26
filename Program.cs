@@ -8,7 +8,7 @@ namespace Lab5
         {
             Percussion drum = new Percussion
             {
-                Information = new MusicBase
+                Information = new MusicBaseInfo
                 {
                     Name = "Барабан",
                     Maker = "Mapex",
@@ -23,7 +23,7 @@ namespace Lab5
 
             Stringed guitar = new Stringed
             {
-                Information = new MusicBase
+                Information = new MusicBaseInfo
                 {
                     Name = "Гитара",
                     Maker = "GEWA",
@@ -38,7 +38,7 @@ namespace Lab5
 
             Wind flute = new Wind
             {
-                Information = new MusicBase
+                Information = new MusicBaseInfo
                 {
                     Name = "Флейта",
                     Maker = "Mooer",
