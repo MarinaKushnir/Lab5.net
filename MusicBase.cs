@@ -1,6 +1,6 @@
 ﻿namespace Lab5
 {
-    internal class MusicBase
+    internal class MusicBaseInfo
     {
         public string Name { get; set; }
         public string Maker { get; set; }
