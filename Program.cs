@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Lab5
 {
@@ -6,53 +6,11 @@ namespace Lab5
     {
         static void Main(string[] args)
         {
-            Percussion drum = new Percussion
-            {
-                Information = new MusicBaseInfo
-                {
-                    Name = "Барабан",
-                    Maker = "Mapex",
-                    Color = "Коричневый",
-                    Weight = 4,
-                    Price = 6082
-                },
-                NumberOfPieces = 1,
-                DrumType = "Малый барабан",
-                DrumMaterial = "Дерево"
-            };
+            Percussion drum1 = new Percussion("Барабан", "Mapex", "Коричневый", 4, 6082, 1, "Малый барабан", "Дерево");
+            Stringed guitar1 = new Stringed("Гитара", "GEWA", "Черный", 3.5, 4322, 6, "Нейлон", "Есть");
+            Wind flute1 = new Wind("Флейта", "Mooer", "Белый", 0.5, 10628, "Блок-флейта", "Пластик", "Пластик");
 
-            Stringed guitar = new Stringed
-            {
-                Information = new MusicBaseInfo
-                {
-                    Name = "Гитара",
-                    Maker = "GEWA",
-                    Color = "Черный",
-                    Weight = 3.5,
-                    Price = 4322
-                },
-                NumberOfStrings = 6,
-                StringMaterial = "Нейлон",
-                IsElectric = "Есть"
-            };
-
-            Wind flute = new Wind
-            {
-                Information = new MusicBaseInfo
-                {
-                    Name = "Флейта",
-                    Maker = "Mooer",
-                    Color = "Белый",
-                    Weight = 0.5,
-                    Price = 10628
-                },
-                InstrumentType = "Блок-флейта",
-                MouthpieceMaterial = "Пластик",
-                InstrumentMaterial = "Пластик"
-            };
-
-
-            MusicInstrument[] instruments = { drum, guitar, flute };
+            MusicInstrument[] instruments = { drum1, guitar1, flute1 };
 
 
             foreach (var instrument in instruments)
