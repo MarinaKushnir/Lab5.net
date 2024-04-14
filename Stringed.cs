@@ -1,8 +1,10 @@
+using System;
+
 namespace Lab5
 {
     internal class Stringed : MusicInstrument
     {
-        private string _isElectric;
+        private bool _isElectric;
         private string _stringMaterial;
         private int _numberOfStrings;
         public static readonly int MAX_NumberOfStrings = 50;
@@ -12,19 +14,29 @@ namespace Lab5
             get => _numberOfStrings;
             set => _numberOfStrings = value > 0 && value < MAX_NumberOfStrings ? value : throw new System.ArgumentOutOfRangeException();
         }
-        public string IsElectric
+        public bool IsElectric
         {
             get => _isElectric;
-            set => _isElectric = value.Trim();
+            set => _isElectric = value;
         }
         public string StringMaterial
         {
             get => _stringMaterial;
-            set => _stringMaterial = value.Trim();
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _stringMaterial = value.Trim();
+                }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
+            }
         }
 
 
-        public Stringed(string name, string maker, string color, double weight, int price, int numberOfStrings, string isElectric, string stringMaterial) : base(name, maker, color, weight, price)
+        public Stringed(string name, string maker, string color, double weight, int price, int numberOfStrings, bool isElectric, string stringMaterial) : base(name, maker, color, weight, price)
         {
             NumberOfStrings = numberOfStrings;
             IsElectric = isElectric;
@@ -36,5 +48,6 @@ namespace Lab5
         {
             return $"{base.ToString()} \n Количество струн: {NumberOfStrings};\n Материал струн: {StringMaterial};\n Элекрическое подключение: {IsElectric}.";
         }
+
     }
 }
