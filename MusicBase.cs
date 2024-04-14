@@ -1,3 +1,5 @@
+using System;
+
 namespace Lab5
 {
     internal class MusicBase
@@ -10,18 +12,48 @@ namespace Lab5
         public static readonly int MAX_Weight = 100;
 
         public string Name { 
-            get=> _name; 
-            set => _name = value.Trim(); 
+            get=> _name;
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _name = value.Trim();
+                }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
+            }
         }
         public string Maker
         {
             get => _maker;
-            set => _maker = value.Trim();
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _maker = value.Trim();
+                }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
+            }
         }
         public string Color
         {
             get => _color;
-            set => _color = value.Trim();
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _color = value.Trim();
+                }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
+            }
         }
         public double Weight
         {
