@@ -1,3 +1,5 @@
+using System;
+
 namespace Lab5
 {
     internal class Percussion : MusicInstrument
@@ -13,12 +15,32 @@ namespace Lab5
             set => _numberOfPieces = value > 0 && value < MAX_NumberOfPieces ? value : throw new System.ArgumentOutOfRangeException();
         }
         public string DrumType{ 
-            get=> _drumType; 
-            set => _drumType = value.Trim(); 
+            get=> _drumType;
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _drumType = value.Trim();
+                }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
+            }
         }
         public string DrumMaterial{
             get => _drumMaterial;
-            set => _drumMaterial = value.Trim();
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _drumMaterial = value.Trim();
+                }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
+            }
         }
 
 
