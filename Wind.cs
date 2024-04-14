@@ -1,3 +1,5 @@
+using System;
+
 namespace Lab5
 {
     internal class Wind : MusicInstrument
@@ -9,17 +11,47 @@ namespace Lab5
         public string InstrumentType
         {
             get => _instrumentType;
-            set => _instrumentType = value.Trim();
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _instrumentType = value.Trim();
+                }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
+            }
         }
         public string MouthpieceMaterial
         {
             get => _mouthpieceMaterial;
-            set => _mouthpieceMaterial = value.Trim();
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _mouthpieceMaterial = value.Trim();
+                }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
+            }
         }
         public string InstrumentMaterial
         {
             get => _instrumentMaterial;
-            set => _instrumentMaterial = value.Trim();
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _instrumentMaterial = value.Trim();
+                }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
+            }
         }
 
 
